@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PyLearn - Інтерактивний тренажер із Python</title>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -22,33 +22,10 @@
             <div class="hero">
                 <h1>Інтерактивний тренажер із мови Python</h1>
                 <p>Опануйте базовий синтаксис та конструкції за 10 хвилин на день</p>
+                <div id="daily-tip-banner" class="daily-tip hidden"></div>
             </div>
             <div id="topics-grid" class="topics-grid">
-                <!-- Картки генеруються динамічно -->
-                <div class="topic-card">
-                    <span class="badge">Тема 1</span>
-                    <h3>Змінні та базові типи</h3>
-                    <p>Цілі числа int, дробові float, рядки str та логічні bool.</p>
-                    <button class="btn btn-primary">Вивчати тему</button>
-                </div>
-                <div class="topic-card">
-                    <span class="badge">Тема 2</span>
-                    <h3>Арифметичні операції</h3>
-                    <p>Пріоритет операторів, цілочисельне ділення // та остача %.</p>
-                    <button class="btn btn-primary">Вивчати тему</button>
-                </div>
-                <div class="topic-card">
-                    <span class="badge">Тема 3</span>
-                    <h3>Умовні оператори (if/else)</h3>
-                    <p>Розгалуження в програмах, логічні умови and, or, not.</p>
-                    <button class="btn btn-primary">Вивчати тему</button>
-                </div>
-                <div class="topic-card">
-                    <span class="badge">Тема 4</span>
-                    <h3>Цикли for та while</h3>
-                    <p>Повторення дій, функція range() та обхід послідовностей.</p>
-                    <button class="btn btn-primary">Вивчати тему</button>
-                </div>
+                <!-- Картки генеруються динамічно в app.js -->
             </div>
         </section>
 
@@ -62,10 +39,14 @@
             <div class="quiz-card">
                 <div id="question-header" class="question-header"></div>
                 <h3 id="question-text"></h3>
-                <pre id="question-code"><code></code></pre>
+                <div id="question-code" class="code-container hidden">
+                    <pre class="code-block"><code></code></pre>
+                </div>
                 <div id="options-container" class="options-container"></div>
                 <div id="feedback" class="feedback hidden"></div>
-                <button id="next-btn" class="btn btn-primary hidden">Наступне завдання</button>
+                <div class="quiz-actions">
+                    <button id="next-btn" class="btn btn-primary hidden">Наступне завдання →</button>
+                </div>
             </div>
         </section>
 
@@ -73,8 +54,11 @@
         <section id="result-screen" class="screen hidden">
             <div class="result-card">
                 <h2>Вітаємо! Тему завершено 🎉</h2>
-                <p id="result-score"></p>
-                <button id="back-to-catalog-btn" class="btn btn-primary">До каталогу тем</button>
+                <div id="result-score"></div>
+                <div class="result-actions">
+                    <button id="retry-topic-btn" class="btn btn-secondary">Пройти знову ↺</button>
+                    <button id="back-to-catalog-btn" class="btn btn-primary">До каталогу тем</button>
+                </div>
             </div>
         </section>
     </main>
